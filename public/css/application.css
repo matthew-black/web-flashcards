@@ -1,6 +1,8 @@
 body {
-  background-color: rgb(156, 215, 270);
-}
+  background-color: rgb(192, 192, 192);
+
+};
+
 header {
   display: block;
 }
@@ -86,10 +88,32 @@ nav li{
 }
 
 .main-header {
- font-family: 'Playfair Display', serif;
+ font-family: 'Nosifer', cursive;
+ color: #FF4500;
  font-size: 2em;
 }
 
+.layout-header {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3em;
+  letter-spacing: 2px;
+  padding-left: 2cm;
+  margin-top: 1cm;
+
+}
+
+.select-deck li {
+   display: inline;
+   list-style: none;
+   padding: 3px;
+
+
+}
+
+.select-deck li a{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+}
 
 
 /*a.button {

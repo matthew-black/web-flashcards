@@ -1,0 +1,14 @@
+<h1 class="main-header">Ghostman Decks:</h1>
+
+<div class="select-deck">
+  <ul>
+
+  <% @decks.each do |deck| %>
+    <li>
+      <a href="/decks/<%= deck.id %>"><%= deck.name %></a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+
