@@ -14,6 +14,9 @@ gem 'activesupport', '~> 5.0'
 gem 'rake', '~> 12.0.0'
 
 gem 'shotgun'
+gem 'extra_print'
+gem 'bcrypt'
+gem 'pry'
 
 group :test do
   gem 'shoulda-matchers'
