@@ -3,6 +3,10 @@
 <div class="select-deck">
   This deck is <%= @deck.name %>
 
-  <p>Start round?</p>
+
+
+<form action="/decks/<%= @deck.id %>/rounds" method="POST">
+  <button type="submit">Start Round</button>
+</form>
 
 </div>
