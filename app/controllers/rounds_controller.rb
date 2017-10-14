@@ -4,20 +4,13 @@ post '/decks/:id/rounds' do
 end
 
 get '/rounds/:id' do
-  deck_id = Round.find(session[:round_id]).deck_id
-  deck = Deck.find(deck_id)
   round = Round.find(session[:round_id])
-
-  all_card_ids = deck.cards.pluck(:id)
-
-  successful_guesses = round.guesses.select { |guess| guess.is_correct }
-
-  solved_card_ids = successful_guesses.map { |guess| guess.card_id }
-
-  card_ids = all_card_ids - solved_card_ids
-
-  @card = Card.find_by(id: card_ids.sample)
-
+  @card = round.prepare_card
   erb:'rounds/show'
 end
 
+post '/rounds/:id/guesses' do
+  # make a guess object! do it well!
+  # doing it well means case insensitive :)
+  redirect "/rounds/#{session[:round_id]}"
+end
