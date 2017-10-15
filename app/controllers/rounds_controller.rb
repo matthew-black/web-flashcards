@@ -16,6 +16,8 @@ post '/rounds/:round_id/card/:card_id/guesses' do
   if card.answer.downcase == params[:response].downcase
     @guess.is_correct = true
     @guess.save
+  else
+    @poor_form_old_sport = card.answer
   end
 
   round = Round.find(session[:round_id])
