@@ -5,6 +5,7 @@ end
 
 get '/rounds/:id' do
   round = Round.find(session[:round_id])
+  @failsauce = round.supply_answer
   @card = round.prepare_card
   erb:'rounds/show'
 end
@@ -16,8 +17,6 @@ post '/rounds/:round_id/card/:card_id/guesses' do
   if card.answer.downcase == params[:response].downcase
     @guess.is_correct = true
     @guess.save
-  else
-    @poor_form_old_sport = card.answer
   end
 
   round = Round.find(session[:round_id])

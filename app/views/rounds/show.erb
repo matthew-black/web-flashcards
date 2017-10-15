@@ -5,10 +5,11 @@
   <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="response" placeholder="Answer">
   <input class="block w-70 mar-t-2 mar-b-3 pad-2 round-1 text-c submit center" type="submit" value="Submit Answer">
 </form>
+
+<% if @failsauce %>
+  <p>Correct answer for the previous card:</p>
+  <p><%= @failsauce %></p>
+<% end %>
 </div>
 
-<% if @poor_form_old_sport %>
-  <p>We have evaluated your answer, and you were wrong.</p>
-  <p>The correct answer is:</p>
-  <p><%= @poor_form_old_sport %></p>
-<% end %>
+
