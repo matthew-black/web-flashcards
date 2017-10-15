@@ -11,7 +11,7 @@ end
 
 post '/rounds/:round_id/card/:card_id/guesses' do
   card = Card.find(params[:card_id])
-  @guess = Guess.find_or_create_by(:round_id => session[:round_id], :card_id => params[:card_id])
+  @guess = Guess.create(:round_id => session[:round_id], :card_id => params[:card_id])
 
   if card.answer.downcase == params[:response].downcase
     @guess.is_correct = true
@@ -20,7 +20,6 @@ post '/rounds/:round_id/card/:card_id/guesses' do
 
   round = Round.find(session[:round_id])
   if round.all_donesies?
-    ep
     redirect "/users/#{current_user.id}"
   else
     redirect "/rounds/#{session[:round_id]}"
