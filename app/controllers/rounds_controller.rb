@@ -1,16 +1,21 @@
 post '/decks/:id/rounds' do
+  authenticate!
   session[:round_id] = Round.create(user_id: session[:user_id], deck_id: params[:id]).id
   redirect "/rounds/#{session[:round_id]}"
 end
 
 get '/rounds/:id' do
-  round = Round.find(session[:round_id])
-  @failsauce = round.supply_answer
-  @card = round.prepare_card
+  authenticate!
+  @round = Round.find(session[:round_id])
+  if !@round.all_donesies?
+    @failsauce = @round.supply_answer
+    @card = @round.prepare_card
+  end
   erb:'rounds/show'
 end
 
 post '/rounds/:round_id/card/:card_id/guesses' do
+  @round = Round.find(session[:round_id])
   card = Card.find(params[:card_id])
   @guess = Guess.create(:round_id => session[:round_id], :card_id => params[:card_id])
 
@@ -18,13 +23,7 @@ post '/rounds/:round_id/card/:card_id/guesses' do
     @guess.is_correct = true
     @guess.save
   end
-
-  round = Round.find(session[:round_id])
-  if round.all_donesies?
-    redirect "/users/#{current_user.id}"
-  else
-    redirect "/rounds/#{session[:round_id]}"
-  end
+  redirect "/rounds/#{session[:round_id]}"
 end
 
 
