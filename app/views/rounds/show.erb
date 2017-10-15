@@ -1,5 +1,8 @@
 <div>
+  <p class="main-question"><%= @card.question %></p>
 
-  <p><%= @card.question %></p>
-  <p><%= @card.answer %></p>
+<form method="POST" action="/rounds/<%= session[:round_id]%>/card/<%= @card.id %>/guesses">
+  <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="response" placeholder="Answer">
+  <input class="block w-70 mar-t-2 mar-b-3 pad-2 round-1 text-c submit center" type="submit" value="Submit Answer">
+</form>
 </div>
