@@ -20,6 +20,7 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
+  authorize!(@user)
   @rounds = @user.rounds
   # @decks = @user.played_decks
   erb :"users/show"
