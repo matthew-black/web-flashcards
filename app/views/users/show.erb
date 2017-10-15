@@ -1,1 +1,11 @@
-<h1>THE USER SHOW PAGE WORKS</h1>
+<h1>Wassup <%= @user.username %></h1>
+
+<ul>
+  <% @rounds.each do |round| %>
+    <li>Deck name: <%= round.deck.name %></li>
+    <li>Date: <%= round.created_at %></li>
+    <li>Card amount: <%= round.deck.cards.length %></li>
+    <li>Amount of guesses that were correct on the first try or whatever: <%= round.first_guess_correct %></li>
+    <li>Total guesses: <%= round.guesses.count %></li>
+  <% end %>
+</ul>

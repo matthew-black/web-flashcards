@@ -20,5 +20,7 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
+  @rounds = @user.rounds
+  # @decks = @user.played_decks
   erb :"users/show"
 end
