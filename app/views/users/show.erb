@@ -1,11 +1,24 @@
-<h1>Wassup <%= @user.username %></h1>
 
-<ul>
-  <% @rounds.each do |round| %>
-    <li>Deck name: <%= round.deck.name %></li>
-    <li>Date: <%= round.created_at %></li>
-    <li>Card amount: <%= round.deck.cards.length %></li>
-    <li>Amount of guesses that were correct on the first try or whatever: <%= round.first_guess_correct %></li>
-    <li>Total guesses: <%= round.guesses.count %></li>
-  <% end %>
-</ul>
+
+<h1 class="profile-page-header">Wassup, <%= @user.username %></h1>
+
+   <figure>
+      <img src="https://vignette.wikia.nocookie.net/pacman/images/a/ac/Piq_45513_400x400.png/revision/latest?cb=20150730170515">
+    </figure>
+
+<div class="profile-table">
+  <ul>
+    <% @rounds.each do |round| %>
+    <li>
+      <p id="deck-name">Deck name: <%= round.deck.name %></p>
+      <p>Date: <%= round.created_at.strftime("%m-%d-%Y") %></p>
+      <p>Card amount: <%= round.deck.cards.length %></p>
+      <p>Amount of guesses that were correct on the first try or   whatever: <%= round.first_guess_correct %></p>
+      <p>Total guesses: <%= round.guesses.count %></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<!--
+strftime("%m-%d-%Y") -->

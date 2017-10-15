@@ -1,9 +1,11 @@
 post '/decks/:id/rounds' do
+  authenticate!
   session[:round_id] = Round.create(user_id: session[:user_id], deck_id: params[:id]).id
   redirect "/rounds/#{session[:round_id]}"
 end
 
 get '/rounds/:id' do
+  authenticate!
   @round = Round.find(session[:round_id])
   if !@round.all_donesies?
     @card = @round.prepare_card
