@@ -8,6 +8,7 @@ get '/rounds/:id' do
   authenticate!
   @round = Round.find(session[:round_id])
   if !@round.all_donesies?
+    @failsauce = @round.supply_answer
     @card = @round.prepare_card
   end
   erb:'rounds/show'
