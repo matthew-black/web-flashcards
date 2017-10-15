@@ -2,9 +2,10 @@
 
 <ul>
   <% @rounds.each do |round| %>
-    <li><%= round.deck.name %></li>
-    <li><%= round.created_at %></li>
-
+    <li>Deck name: <%= round.deck.name %></li>
+    <li>Date: <%= round.created_at %></li>
+    <li>Card amount: <%= round.deck.cards.length %></li>
+    <li>Amount of guesses that were correct on the first try or whatever: <%= round.first_guess_correct %></li>
     <li>Total guesses: <%= round.guesses.count %></li>
   <% end %>
 </ul>
