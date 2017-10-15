@@ -1,12 +1,10 @@
-<h1 class="main-header">Hey hello welcome hi</h1>
+<h1 class="main-header">LETS PLAY A GAME:</h1>
 
 <div class="select-deck">
-  This deck is <%= @deck.name %>
+  <p class="deck-id-header">This deck is all about <%= @deck.name %></p>
 
 
-
-<form action="/decks/<%= @deck.id %>/rounds" method="POST">
-  <button type="submit">Start Round</button>
+<form class="start-round-button" action="/decks/<%= @deck.id %>/rounds" method="POST">
+  <button type="submit">Start here if you dare!</button>
 </form>
-
 </div>
