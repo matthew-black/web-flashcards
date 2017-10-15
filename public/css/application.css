@@ -58,7 +58,7 @@ nav li{
 
 .round-1 {
   border-radius: 1em;
-  background-color: silver;
+  background-color: orange;
 }
 
 .text-c {
@@ -73,6 +73,14 @@ nav li{
 
 .no-style-button {
   background: none;
+}
+
+.main-question{
+  display: flex;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2em;
+
 }
 
 .no-style-button input {
