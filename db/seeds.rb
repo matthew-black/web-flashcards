@@ -1,87 +1,46 @@
-require 'faker'
-
-# DECK 1
-5.times do
-  card = {:question => Faker::Pokemon.name, :answer => Faker::Pokemon.location, :deck_id => 1}
-  Card.create!(card)
-end
-Deck.create!(:name=> "Pokemon")
-
-# DECK 2
-Card.create(question: "Is Pat kind?", answer: "Yes", deck_id: 2)
-Card.create(question: "Is Mitch tall?", answer: "Yes", deck_id: 2)
-Card.create(question: "Are rainbows special?", answer: "No" , deck_id: 2)
 Deck.create(:name => "Life Questions")
+# DECK 1
+Card.create(question: "Is Pat kind?", answer: "Yes", deck_id: 1)
+Card.create(question: "Is Mitch tall?", answer: "Yes", deck_id: 1)
+Card.create(question: "Are rainbows special?", answer: "No" , deck_id: 1)
+Card.create(question: "You hungry?", answer: "Yes", deck_id: 1)
+Card.create(question: "Is ghost pepper salsa tasty as fuck?", answer: "Yes", deck_id: 1)
+Card.create(question: "Are DBC students caffienated?", answer: "Yes", deck_id: 1)
 
-# DECK 3
-Card.create(question: "You hungry?", answer: "Yes", deck_id: 3)
-Card.create(question: "Is ghost pepper salsa tasty as fuck?", answer: "Yes", deck_id: 3)
-Card.create(question: "Are DBC students caffienated?", answer: "Yes", deck_id: 3)
-Deck.create(:name => "Foodz")
 
-# DECK 4
-Card.create(question: "Which color SPK is best SPK color?", answer: "Yellow", deck_id: 4)
-Card.create(question: "When did God create SPKs?", answer: "1970", deck_id: 4)
-Card.create(question: "Is there tartaric acid in SPKs?", answer: "Yes", deck_id: 4)
 Deck.create(:name => "Sour Patch Kids")
+# DECK 2
+Card.create(question: "Which color SPK is best SPK color?", answer: "Yellow", deck_id: 2)
+Card.create(question: "When did God create SPKs?", answer: "1970", deck_id: 2)
+Card.create(question: "Is there tartaric acid in SPKs?", answer: "Yes", deck_id: 2)
+Card.create(question: "How many SPKs does it take to reach Nirvana?", answer: "Just One", deck_id: 2)
+Card.create(question: "Are there any health drawbacks to consuming SPKs?", answer: "No", deck_id: 2)
+Card.create(question: "If a person offers you either one SPK now, or two SPKs in an hour, what should you do?", answer: "Forcibly Take All Three.", deck_id: 2)
+Card.create(question: "If you mix Swedish Fish with SPKs, do you now possess an improved version of trail mix?", answer: "Yes", deck_id: 2)
+
+Deck.create(name: "Pac-Man Ghosts")
+# DECK 3
+Card.create(question: "Which Pac-Man ghost is red?", answer: "Blinky", deck_id: 3)
+Card.create(question: "Which Pac-Man ghost is pink?", answer: "Pinky", deck_id: 3)
+Card.create(question: "Which Pac-Man ghost is blue?", answer: "Inky", deck_id: 3)
+Card.create(question: "Which Pac-Man ghost is orange?", answer: "Clyde", deck_id: 3)
+Card.create(question: "What is the 'character' description of Blinky's chasing style?", answer: "Shadow", deck_id: 3)
+Card.create(question: "What is the 'character' description of Pinky's chasing style?", answer: "Speedy", deck_id: 3)
+Card.create(question: "What is the 'character' description of Inky's chasing style?", answer: "Bashful", deck_id: 3)
+Card.create(question: "What is the 'character' description of Clyde's chasing style?", answer: "Pokey", deck_id: 3)
+Card.create(question: "True or False: Each ghost behaves according to its own unique algorithm?", answer: "True", deck_id: 3)
+Card.create(question: "How many points are awarded for gobbling up all four ghosts?", answer: "1600", deck_id: 3)
 
 
-5.times do
-  user = { :username => Faker::Internet.user_name, :email => Faker::Internet.email, :password => "password" }
-  User.create!(user)
-end
 
-
-
-# ROUND 1
-Round.create(:user_id => 1, :deck_id => 1)
-# Yep.
-Guess.create(is_correct: false, round_id: 1, card_id: 1)
-Guess.create(is_correct: true, round_id: 1, card_id: 1)
-Guess.create(is_correct: true, round_id: 1, card_id: 2)
-Guess.create(is_correct: false, round_id: 1, card_id: 3)
-Guess.create(is_correct: false, round_id: 1, card_id: 3)
-Guess.create(is_correct: false, round_id: 1, card_id: 3)
-Guess.create(is_correct: true, round_id: 1, card_id: 3)
-Guess.create(is_correct: false, round_id: 1, card_id: 4)
-Guess.create(is_correct: false, round_id: 1, card_id: 4)
-Guess.create(is_correct: false, round_id: 1, card_id: 4)
-Guess.create(is_correct: true, round_id: 1, card_id: 4)
-Guess.create(is_correct: true, round_id: 1, card_id: 5)
-
-# ROUND 2
-Round.create(:user_id => 1, :deck_id => 1)
-# Yep.
-Guess.create(is_correct: false, round_id: 2, card_id: 5)
-Guess.create(is_correct: false, round_id: 2, card_id: 5)
-Guess.create(is_correct: true, round_id: 2, card_id: 3)
-Guess.create(is_correct: false, round_id: 2, card_id: 3)
-Guess.create(is_correct: false, round_id: 2, card_id: 4)
-Guess.create(is_correct: false, round_id: 2, card_id: 4)
-Guess.create(is_correct: true, round_id: 2, card_id: 2)
-Guess.create(is_correct: false, round_id: 2, card_id: 1)
-Guess.create(is_correct: true, round_id: 2, card_id: 1)
-Guess.create(is_correct: true, round_id: 2, card_id: 4)
-Guess.create(is_correct: true, round_id: 2, card_id: 5)
-
-# ROUND 3
-Round.create(:user_id => 1, :deck_id => 4)
-# Yep.
-Guess.create(is_correct: false, round_id: 3, card_id: 12)
-Guess.create(is_correct: true, round_id: 3, card_id: 12)
-Guess.create(is_correct: true, round_id: 3, card_id: 13)
-Guess.create(is_correct: false, round_id: 3, card_id: 14)
-Guess.create(is_correct: false, round_id: 3, card_id: 14)
-Guess.create(is_correct: true, round_id: 3, card_id: 14)
-
-# ROUND 4 (In progress round.
-# (3 cards, 1 is answered correctly on first try, 1 is on 2nd try)
-Round.create(:user_id => 2, :deck_id => 2)
-# Yep.
-Guess.create(is_correct: false, round_id: 4, card_id: 6)
-Guess.create(is_correct: false, round_id: 4, card_id: 6)
-Guess.create(is_correct: false, round_id: 4, card_id: 8)
-Guess.create(is_correct: true, round_id: 4, card_id: 6)
-Guess.create(is_correct: false, round_id: 4, card_id: 7)
-Guess.create(is_correct: true, round_id: 4, card_id: 8)
-Guess.create(is_correct: false, round_id: 4, card_id: 7)
+Deck.create(name: "Pac-Man Factoids")
+# DECK 4
+Card.create(question: "How many points are awarded for eating a strawberry?", answer: "300", deck_id: 4)
+Card.create(question: "True or False: Pac-Man moves slower while eating pellets?", answer: "True", deck_id: 4)
+Card.create(question: "What year was Pac-Man released?", answer: "1980", deck_id: 4)
+Card.create(question: "The things Pac-Man eats are referred to as pellets. What is the 'official' name for them?", answer: "Pac-Dots", deck_id: 4)
+Card.create(question: "Which level is unplayable due to integer overflow?", answer: "456", deck_id: 4)
+Card.create(question: "Which Japanese company developed Pac-Man", answer: "Namco", deck_id: 4)
+Card.create(question: "Is it a good idea to always keep 45-cents in your pocket in case you encounter a Pac-Man game?", answer: "Yes", deck_id: 4)
+Card.create(question: "To get this question correct, do a Pac-Man impression and type 'Impression Complete'.", answer: "Impression Complete", deck_id: 4)
+Card.create(question: "The original name was Puck-Man, but kids everywhere would've obviously vandalized every arcade cabinet to read:", answer: "Fuck-Man", deck_id: 4)
