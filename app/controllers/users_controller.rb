@@ -21,7 +21,7 @@ end
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
   authorize!(@user)
-  @rounds = @user.rounds
+  @rounds = @user.rounds.order(created_at: :desc)
   # @decks = @user.played_decks
   erb :"users/show"
 end
