@@ -190,6 +190,40 @@ nav li{
 
 }
 
+
+.question-feedback p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2em;
+  padding: 25px;
+  display: inline;
+  width: 25%;
+  margin: 15px;
+}
+
+
+.finish-round-feedback p {
+  display: flex;
+  justify-content: center;
+  font-family: 'Nosifer', cursive;
+  letter-spacing: 2px;
+  color: #FF4500;
+  font-size: 1.75em;
+  font-weight: bold;
+  background: black;
+  padding: 25px;
+  width: 90%;
+  margin: 30px;
+}
+
+/*.finish-round-feedback form {
+  display: flex;
+  justify-content: center;
+  font-family: 'Audiowide', cursive;
+}*/
 /*.article-box li a:link {
   color: #b74e28;
 }

@@ -1,9 +1,11 @@
 <div>
+  <div class="finish-round-feedback">
   <% if @round.all_donesies? %>
     <p>You've completed a round of <%= @round.deck.name %>. You answered <%= @round.first_guess_correct %>/<%= @round.deck.cards.length %> cards correctly on the first try. You submitted <%= @round.guesses.count %> total guesses before each card was answered correctly. Great job!!!!</p>
   <form action="/decks/<%= @round.deck.id %>/rounds" method="POST">
-    <button type="submit">Play Another Round</button>
+    <button class="block w-70 mar-t-2 mar-b-3 pad-2 round-1 text-c submit center" type="submit">Play Another Round</button>
   </form>
+  </div>
   <% else %>
 
   <p class="main-question"><%= @card.question %></p>
@@ -12,10 +14,12 @@
     <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="response" placeholder="Answer">
     <input class="block w-70 mar-t-2 mar-b-3 pad-2 round-1 text-c submit center" type="submit" value="Submit Answer">
   </form>
+  <div class="question-feedback">
     <% if @failsauce %>
       <p>Correct answer for the previous card:</p>
       <p><%= @failsauce %></p>
     <% end %>
+    </div>
   <% end %>
 </div>
 
