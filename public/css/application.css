@@ -211,7 +211,7 @@ nav li{
   font-family: 'Nosifer', cursive;
   letter-spacing: 2px;
   color: #FF4500;
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: bold;
   background: black;
   padding: 25px;
@@ -219,11 +219,11 @@ nav li{
   margin: 30px;
 }
 
-.finish-round-feedback form {
+/*.finish-round-feedback form {
   display: flex;
   justify-content: center;
   font-family: 'Audiowide', cursive;
-}
+}*/
 /*.article-box li a:link {
   color: #b74e28;
 }
